@@ -47,13 +47,16 @@ app.use("/api/contacts", contactsRoutes);
 app.use("/api/messages", messagesRoutes);
 app.use("/api/channel", channelRoutes);
 
-mongoose
-  .connect(process.env.DATABASE_URL)
-  .then(() => {
-    console.log("Database connected Successfully");
-    const server = app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
-    });
-    setupSocket(server);
-  })
-  .catch((err) => console.log(err.message));
+const server = app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+setupSocket(server);
+
+if (process.env.DATABASE_URL) {
+  mongoose
+    .connect(process.env.DATABASE_URL)
+    .then(() => console.log("Database connected Successfully"))
+    .catch((err) => console.log("MongoDB Connection Error:", err.message));
+} else {
+  console.log("DATABASE_URL is not set in server/.env");
+}
