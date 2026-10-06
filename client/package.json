@@ -1,7 +1,12 @@
 {
   "name": "client",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "pranav <pranavgadewar4321@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gadewar/polychat.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -30,7 +30,7 @@
 ### Local Development Setup
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/polychat.git
+git clone https://github.com/gadewar/polychat.git
 cd polychat
 
 # Install backend dependencies
