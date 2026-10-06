@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: polychat-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.x
+      - key: PORT
+        sync: false
+      - key: JWT_KEY
+        sync: false
+      - key: ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
